@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--配置mybatis的类型别名-->
+    <typeAliases>
+        <package name="com.team.house.entity"/>
+    </typeAliases>
+    <!--添加分页的插件--><!--拦截请求，唤醒插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--&lt;!&ndash;指定方言，即操作的数据库是MySQL，可不用加&ndash;&gt;
+            <property name="dialect" value="mysql"/>-->
+        </plugin>
+    </plugins>
+
+    <!--加载所有sql映射文件:加载持久化操作-->
+    <mappers>
+        <package name="com.team.house.mapper"/>
+        <!--<mapper resource="com/team/house/mapper/"/>-->
+        <!--<mapper resource="com/team/house/mapper/DistrictMapper.xml"></mapper>
+        <mapper resource="com/team/house/mapper/HouseMapper.xml"></mapper>
+        <mapper resource="com/team/house/mapper/StreetMapper.xml"></mapper>
+        <mapper resource="com/team/house/mapper/TypeMapper.xml"></mapper>
+        <mapper resource="com/team/house/mapper/UsersMapper.xml"></mapper>-->
+    </mappers>
+</configuration>
